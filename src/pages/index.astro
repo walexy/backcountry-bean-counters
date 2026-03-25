@@ -59,11 +59,14 @@ import Layout from '../layouts/Layout.astro';
           <div class="relative">
             <!-- Glow effect -->
             <div class="absolute inset-0 blur-3xl bg-gold/20 rounded-full scale-110"></div>
-            <img
-              src="/logo.png"
-              alt="BackCountry Bean Counter"
-              class="relative w-72 h-72 md:w-96 md:h-96 object-contain drop-shadow-2xl"
-            />
+            <picture>
+              <source srcset="/logo-transparent.webp" type="image/webp" />
+              <img
+                src="/logo-transparent.png"
+                alt="BackCountry Bean Counter"
+                class="relative w-72 h-72 md:w-96 md:h-96 object-contain drop-shadow-2xl"
+              />
+            </picture>
           </div>
         </div>
       </div>
@@ -88,32 +91,44 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
         <div class="badge-container flex flex-col items-center" data-delay="0">
-          <img
-            src="/intuit-proadvisor-quickbooks-level1-certified.png"
-            alt="Intuit QuickBooks ProAdvisor Level 1 Certified"
-            class="badge-img h-24 md:h-28 w-auto object-contain"
-          />
+          <picture>
+            <source srcset="/intuit-proadvisor-quickbooks-level1-certified.webp" type="image/webp" />
+            <img
+              src="/intuit-proadvisor-quickbooks-level1-certified.png"
+              alt="Intuit QuickBooks ProAdvisor Level 1 Certified"
+              class="badge-img h-24 md:h-28 w-auto object-contain"
+            />
+          </picture>
         </div>
         <div class="badge-container flex flex-col items-center" data-delay="1">
-          <img
-            src="/intuit-proadvisor-quickbooks-level-2-certified.png"
-            alt="Intuit QuickBooks ProAdvisor Level 2 Certified"
-            class="badge-img h-24 md:h-28 w-auto object-contain"
-          />
+          <picture>
+            <source srcset="/intuit-proadvisor-quickbooks-level-2-certified.webp" type="image/webp" />
+            <img
+              src="/intuit-proadvisor-quickbooks-level-2-certified.png"
+              alt="Intuit QuickBooks ProAdvisor Level 2 Certified"
+              class="badge-img h-24 md:h-28 w-auto object-contain"
+            />
+          </picture>
         </div>
         <div class="badge-container flex flex-col items-center" data-delay="2">
-          <img
-            src="/intuit-bookkeeping-trained.png"
-            alt="Intuit Bookkeeping Trained"
-            class="badge-img h-24 md:h-28 w-auto object-contain"
-          />
+          <picture>
+            <source srcset="/intuit-bookkeeping-trained.webp" type="image/webp" />
+            <img
+              src="/intuit-bookkeeping-trained.png"
+              alt="Intuit Bookkeeping Trained"
+              class="badge-img h-24 md:h-28 w-auto object-contain"
+            />
+          </picture>
         </div>
         <div class="badge-container flex flex-col items-center" data-delay="3">
-          <img
-            src="/intuit-proadvisor-client-advisory-services-foundations.png"
-            alt="Intuit ProAdvisor Client Advisory Services Foundations"
-            class="badge-img h-24 md:h-28 w-auto object-contain"
-          />
+          <picture>
+            <source srcset="/intuit-proadvisor-client-advisory-services-foundations.webp" type="image/webp" />
+            <img
+              src="/intuit-proadvisor-client-advisory-services-foundations.png"
+              alt="Intuit ProAdvisor Client Advisory Services Foundations"
+              class="badge-img h-24 md:h-28 w-auto object-contain"
+            />
+          </picture>
         </div>
       </div>
     </div>
