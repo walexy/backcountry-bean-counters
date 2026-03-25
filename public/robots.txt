@@ -1,0 +1,33 @@
+# BackCountry Bean Counter - robots.txt
+# Allow all search engines and AI crawlers
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://backcountrybeancounter.com/sitemap-index.xml
+
+# Specific rules for AI crawlers (explicit allow)
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /

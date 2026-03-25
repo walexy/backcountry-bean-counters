@@ -4,10 +4,102 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
 }
 
-const { title, description = "Simple, reliable bookkeeping for Vermont small businesses. We keep your finances out of the trees." } = Astro.props;
+const {
+  title,
+  description = "Simple, reliable bookkeeping for Vermont small businesses. We keep your finances out of the trees.",
+  ogImage = "/logo.png"
+} = Astro.props;
+
 const currentPath = Astro.url.pathname;
+const siteUrl = Astro.site || new URL("https://backcountrybeancounter.com");
+const canonicalUrl = new URL(currentPath, siteUrl).toString();
+const fullTitle = title === "Home" ? "BackCountry Bean Counter | Vermont Small Business Bookkeeping" : `${title} | BackCountry Bean Counter`;
+
+// Structured data for LocalBusiness (helps search engines and AI understand the business)
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": siteUrl.toString(),
+  "name": "BackCountry Bean Counter",
+  "description": "Simple, reliable bookkeeping for Vermont small businesses. Over 30 years of real-world business experience.",
+  "url": siteUrl.toString(),
+  "logo": new URL("/logo.png", siteUrl).toString(),
+  "image": new URL("/logo.png", siteUrl).toString(),
+  "telephone": "",
+  "email": "hello@backcountrybeancounter.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Central Vermont",
+    "addressRegion": "VT",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 44.0,
+    "longitude": -72.7
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Vermont"
+  },
+  "priceRange": "$$",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+      "opens": "08:00",
+      "closes": "16:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "opens": "08:00",
+      "closes": "12:00"
+    }
+  ],
+  "sameAs": [],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Bookkeeping Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Trailhead (Basic Bookkeeping)",
+          "description": "Bank & credit card reconciliation, expense categorization, monthly financial reports, email support"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Ridgeline (Standard Bookkeeping)",
+          "description": "Everything in Trailhead plus unlimited email support, accounts payable/receivable, monthly insights"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Summit (Premium Bookkeeping)",
+          "description": "Everything in Ridgeline plus cash flow tracking, budgeting support, payroll coordination, priority support, tax prep"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Free 30-Minute Consultation",
+          "description": "Complimentary consultation to review your books and recommend the best plan for your business"
+        }
+      }
+    ]
+  }
+};
 ---
 
 <!doctype html>
@@ -16,8 +108,40 @@ const currentPath = Astro.url.pathname;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, siteUrl).toString()} />
+    <meta property="og:site_name" content="BackCountry Bean Counter" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, siteUrl).toString()} />
+
+    <!-- Additional SEO meta tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="BackCountry Bean Counter" />
+    <meta name="geo.region" content="US-VT" />
+    <meta name="geo.placename" content="Vermont" />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/logo.png" />
-    <title>{title} | BackCountry Bean Counter</title>
+    <link rel="apple-touch-icon" href="/logo.png" />
+
+    <title>{fullTitle}</title>
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
   <body class="bg-cream">
     <!-- Navigation -->
