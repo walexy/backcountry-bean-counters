@@ -1,0 +1,30 @@
+
+
+```# Mac OS system files
+.DS_Store
+._*.AppleDouble
+.LSOverride
+.Trashes
+# Environment files
+.env
+.env.local
+*.env
+# Logs
+*.log
+npm-debug.log
+# Build directories
+node_modules/
+dist/
+build/
+out/
+# IDE and Editor files
+.idea/
+.vscode/
+.project
+.classpath
+.settings/
+.swp
+.swo*
+~
+# OS generated files
+Spotlight-V100
