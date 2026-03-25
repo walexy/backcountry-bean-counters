@@ -1,0 +1,174 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Simple, reliable bookkeeping for Vermont small businesses. We keep your finances out of the trees." } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <title>{title} | BackCountry Bean Counter</title>
+  </head>
+  <body class="bg-cream">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-forest/95 backdrop-blur-sm border-b border-forest-light/20">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <a href="/" class="flex items-center gap-4 group">
+            <div class="relative">
+              <img
+                src="/logo.png"
+                alt="BackCountry Bean Counter"
+                class="h-12 w-12 rounded-full ring-2 ring-gold/30 group-hover:ring-gold transition-all duration-300"
+              />
+              <div class="absolute inset-0 rounded-full bg-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div class="hidden sm:block">
+              <span class="font-display text-xl text-white tracking-tight">BackCountry</span>
+              <span class="block text-gold text-sm font-medium -mt-1">Bean Counter</span>
+            </div>
+          </a>
+
+          <!-- Navigation Links -->
+          <div class="flex items-center gap-1">
+            <a
+              href="/"
+              class:list={[
+                "px-4 py-2 text-sm font-medium rounded-md transition-all duration-300",
+                currentPath === "/"
+                  ? "text-gold bg-white/10"
+                  : "text-white/80 hover:text-white hover:bg-white/5"
+              ]}
+            >
+              Home
+            </a>
+            <a
+              href="/services"
+              class:list={[
+                "px-4 py-2 text-sm font-medium rounded-md transition-all duration-300",
+                currentPath === "/services" || currentPath === "/services/"
+                  ? "text-gold bg-white/10"
+                  : "text-white/80 hover:text-white hover:bg-white/5"
+              ]}
+            >
+              Services
+            </a>
+            <a
+              href="/contact"
+              class:list={[
+                "ml-2 px-5 py-2.5 text-sm font-semibold rounded-md transition-all duration-300",
+                currentPath === "/contact" || currentPath === "/contact/"
+                  ? "bg-gold text-forest-dark"
+                  : "bg-gold/90 text-forest-dark hover:bg-gold"
+              ]}
+            >
+              Get in Touch
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-20"></div>
+
+    <main>
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-forest-dark text-white relative overflow-hidden">
+      <!-- Topo pattern overlay -->
+      <div class="absolute inset-0 topo-pattern opacity-30"></div>
+
+      <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 py-16">
+        <div class="grid md:grid-cols-12 gap-12">
+          <!-- Brand Column -->
+          <div class="md:col-span-5">
+            <div class="flex items-center gap-4 mb-6">
+              <img src="/logo.png" alt="BackCountry Bean Counter" class="h-16 w-16 rounded-full ring-2 ring-gold/30" />
+              <div>
+                <span class="font-display text-2xl text-white">BackCountry</span>
+                <span class="block text-gold font-medium">Bean Counter</span>
+              </div>
+            </div>
+            <p class="text-white/70 text-lg font-display italic mb-6">
+              "We keep your finances out of the trees."
+            </p>
+            <p class="text-white/50 text-sm leading-relaxed">
+              Bringing over 30 years of real-world business experience to Vermont small businesses.
+              Clear books, confident decisions.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="md:col-span-3 md:col-start-7">
+            <h3 class="font-display text-lg text-gold mb-6">Navigate</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="/" class="text-white/70 hover:text-white transition-colors elegant-underline">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="/services" class="text-white/70 hover:text-white transition-colors elegant-underline">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="/contact" class="text-white/70 hover:text-white transition-colors elegant-underline">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="md:col-span-3">
+            <h3 class="font-display text-lg text-gold mb-6">Connect</h3>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-gold mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span class="text-white/70">Central Vermont</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-gold mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <a href="mailto:hello@backcountrybeancounter.com" class="text-white/70 hover:text-white transition-colors text-sm">
+                  hello@backcountrybeancounter.com
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="mt-16 pt-8 border-t border-white/10">
+          <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p class="text-white/40 text-sm">
+              &copy; {new Date().getFullYear()} BackCountry Bean Counter. All rights reserved.
+            </p>
+            <p class="text-white/40 text-sm">
+              Proudly serving Vermont small businesses
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

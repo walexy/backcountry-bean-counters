@@ -1,0 +1,368 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Home">
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex items-center bg-forest overflow-hidden">
+    <!-- Background layers -->
+    <div class="absolute inset-0 bg-gradient-to-br from-forest-dark via-forest to-evergreen"></div>
+    <div class="absolute inset-0 topo-pattern opacity-20"></div>
+
+    <!-- Decorative mountain silhouette -->
+    <div class="absolute bottom-0 left-0 right-0 h-32 opacity-20">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="w-full h-full">
+        <path d="M0,120 L0,60 L200,80 L400,20 L600,70 L800,30 L1000,60 L1200,40 L1200,120 Z" fill="currentColor" class="text-forest-light"/>
+      </svg>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 py-20">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Text content -->
+        <div>
+          <div class="animate-fade-up">
+            <span class="inline-block px-4 py-1.5 bg-gold/20 text-gold rounded-full text-sm font-medium mb-6">
+              Vermont Small Business Bookkeeping
+            </span>
+          </div>
+
+          <h1 class="animate-fade-up delay-100 font-display text-5xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6">
+            BackCountry<br/>
+            <span class="text-gold">Bean Counter</span>
+          </h1>
+
+          <p class="animate-fade-up delay-200 text-2xl md:text-3xl text-white/90 font-display italic mb-8">
+            We keep your finances out of the trees.
+          </p>
+
+          <p class="animate-fade-up delay-300 text-lg text-white/70 max-w-lg mb-10 leading-relaxed">
+            Simple, reliable bookkeeping backed by 30+ years of real-world business experience.
+            Clear books. Confident decisions.
+          </p>
+
+          <div class="animate-fade-up delay-400 flex flex-col sm:flex-row gap-4">
+            <a href="/contact" class="btn-primary inline-flex items-center justify-center gap-2">
+              <span>Free Consultation</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            <a href="/services" class="btn-secondary text-white inline-flex items-center justify-center gap-2">
+              <span>View Services</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Logo/Visual -->
+        <div class="animate-scale-in delay-300 flex justify-center lg:justify-end">
+          <div class="relative">
+            <!-- Glow effect -->
+            <div class="absolute inset-0 blur-3xl bg-gold/20 rounded-full scale-110"></div>
+            <img
+              src="/logo.png"
+              alt="BackCountry Bean Counter"
+              class="relative w-72 h-72 md:w-96 md:h-96 object-contain drop-shadow-2xl"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in delay-600">
+      <div class="flex flex-col items-center gap-2 text-white/50">
+        <span class="text-xs uppercase tracking-widest">Scroll</span>
+        <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-24 md:py-32 bg-cream relative paper-texture" id="about">
+    <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-8">
+      <!-- Section header -->
+      <div class="text-center mb-16">
+        <span class="inline-block text-gold font-medium tracking-wider uppercase text-sm mb-4">About</span>
+        <h2 class="font-display text-4xl md:text-5xl text-forest mb-6">
+          Real Experience.<br/>Real Results.
+        </h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-gold to-gold-light mx-auto rounded-full"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="grid md:grid-cols-12 gap-12 items-start">
+        <!-- Main text -->
+        <div class="md:col-span-7 space-y-6 text-lg text-slate leading-relaxed">
+          <p>
+            At BackCountry Bean Counter, I bring <strong class="text-forest font-semibold">over 30 years of real-world business experience</strong> to the table.
+            My career has been rooted in the Foodservice industry, where I have worked my way through nearly
+            every level of operations—from business owner to distribution category management, sales, even
+            government and healthcare work.
+          </p>
+          <p>
+            Along the way, I have managed P&L's, controlled labor, food costs, and leveraged purchasing power
+            to improve margins and drive profitability. I understand firsthand what it takes to run a business
+            day in and day out—<em>because I have done it.</em>
+          </p>
+          <p>
+            I don't just record numbers, I help make sense of them. My goal is to make small businesses'
+            financials clear and accurate so they can <strong class="text-forest font-semibold">make confident decisions</strong>, stay on track, and focus
+            on what they do best.
+          </p>
+        </div>
+
+        <!-- Sidebar callout -->
+        <div class="md:col-span-5">
+          <div class="bg-forest rounded-2xl p-8 text-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+            <div class="relative z-10">
+              <p class="font-display text-xl italic text-white/90 mb-6 leading-relaxed">
+                "When I'm not working with clients, you can usually find me on the mountain—skiing, mountain
+                biking, hiking, or camping."
+              </p>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-0.5 bg-gold rounded-full"></div>
+                <span class="text-gold font-medium">The BackCountry Way</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="mt-8 text-lg text-slate leading-relaxed">
+            Whether your business is just getting started or already well established, I'm here to help
+            you keep your business running smoothly, <strong class="text-forest font-semibold">no matter the terrain.</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Preview -->
+  <section class="py-24 md:py-32 bg-parchment relative">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <!-- Section header -->
+      <div class="text-center mb-16">
+        <span class="inline-block text-gold font-medium tracking-wider uppercase text-sm mb-4">Services</span>
+        <h2 class="font-display text-4xl md:text-5xl text-forest mb-6">
+          Monthly Bookkeeping Packages
+        </h2>
+        <p class="text-slate text-lg max-w-2xl mx-auto">
+          Choose the plan that fits your business. All packages include personalized attention and Vermont-based service.
+        </p>
+      </div>
+
+      <!-- Pricing cards -->
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <!-- Trailhead -->
+        <div class="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-forest/5 card-lift">
+          <div class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-forest-light/10 text-forest-light mb-4 group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+              </svg>
+            </div>
+            <h3 class="font-display text-2xl text-forest mb-1">Trailhead</h3>
+            <span class="text-sm text-slate uppercase tracking-wider">Basic</span>
+          </div>
+
+          <p class="text-slate text-center mb-8">For small, simple businesses just getting started</p>
+
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-forest-light mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-slate">Bank & credit card reconciliation</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-forest-light mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-slate">Expense categorization</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-forest-light mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-slate">Monthly financial reports</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-forest-light mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-slate">Email support 1x per week</span>
+            </li>
+          </ul>
+
+          <a href="/contact" class="block w-full text-center py-3 px-6 rounded-lg border-2 border-forest text-forest font-semibold hover:bg-forest hover:text-white transition-all duration-300">
+            Get Started
+          </a>
+        </div>
+
+        <!-- Ridgeline (Featured) -->
+        <div class="group bg-forest rounded-2xl p-8 shadow-xl relative md:-translate-y-4 overflow-hidden">
+          <!-- Popular badge -->
+          <div class="absolute top-0 right-0 bg-gold text-forest-dark text-xs font-bold px-4 py-1.5 rounded-bl-xl">
+            Most Popular
+          </div>
+
+          <!-- Background decoration -->
+          <div class="absolute top-0 left-0 w-full h-full topo-pattern opacity-10"></div>
+
+          <div class="relative z-10">
+            <div class="text-center mb-8">
+              <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gold/20 text-gold mb-4 group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                </svg>
+              </div>
+              <h3 class="font-display text-2xl text-white mb-1">Ridgeline</h3>
+              <span class="text-sm text-white/70 uppercase tracking-wider">Standard</span>
+            </div>
+
+            <p class="text-white/80 text-center mb-8">For growing businesses ready to scale</p>
+
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-gold mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-white/90"><strong class="text-white">Everything in Trailhead</strong></span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-gold mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-white/90">Unlimited email support</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-gold mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-white/90">Accounts payable (bill tracking)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-gold mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-white/90">Accounts receivable (invoice tracking)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-gold mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-white/90">Monthly summary + insights</span>
+              </li>
+            </ul>
+
+            <a href="/contact" class="btn-primary block w-full text-center">
+              <span>Get Started</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Summit -->
+        <div class="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-forest/5 card-lift">
+          <div class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-bark/10 text-bark mb-4 group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+              </svg>
+            </div>
+            <h3 class="font-display text-2xl text-forest mb-1">Summit</h3>
+            <span class="text-sm text-slate uppercase tracking-wider">Premium</span>
+          </div>
+
+          <p class="text-slate text-center mb-8">For established businesses needing comprehensive support</p>
+
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-bark mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-slate"><strong class="text-forest">Everything in Ridgeline</strong></span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-bark mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-slate">Cash flow tracking</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-bark mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-slate">Budgeting support</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-bark mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-slate">Payroll coordination</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-bark mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-slate">Priority support & tax prep</span>
+            </li>
+          </ul>
+
+          <a href="/contact" class="block w-full text-center py-3 px-6 rounded-lg border-2 border-forest text-forest font-semibold hover:bg-forest hover:text-white transition-all duration-300">
+            Get Started
+          </a>
+        </div>
+      </div>
+
+      <!-- View all link -->
+      <div class="text-center mt-12">
+        <a href="/services" class="inline-flex items-center gap-2 text-forest font-semibold hover:text-forest-dark transition-colors elegant-underline">
+          <span>View all services including à la carte options</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 md:py-32 bg-forest relative overflow-hidden">
+    <!-- Background pattern -->
+    <div class="absolute inset-0 topo-pattern opacity-10"></div>
+
+    <!-- Decorative elements -->
+    <div class="absolute top-0 left-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      <span class="inline-block text-gold font-medium tracking-wider uppercase text-sm mb-6">Free Consultation</span>
+
+      <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+        Ready to Get Your Books<br/>
+        <span class="text-gold">Out of the Trees?</span>
+      </h2>
+
+      <p class="text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed">
+        I offer a free 30-minute consultation to review your books and recommend the best plan for your business.
+      </p>
+
+      <a href="/contact" class="btn-primary inline-flex items-center gap-3 text-lg">
+        <span>Book Your Free Consultation</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+        </svg>
+      </a>
+
+      <p class="mt-8 text-white/50 flex items-center justify-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        <span>Proudly serving Central Vermont</span>
+      </p>
+    </div>
+  </section>
+</Layout>
