@@ -94,48 +94,146 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
 
-        <!-- Booking Widget -->
+        <!-- Contact Form -->
         <div class="lg:col-span-3">
           <div class="bg-white rounded-2xl shadow-lg border border-forest/5 overflow-hidden">
             <div class="bg-gradient-to-br from-forest to-forest-dark p-6 text-white">
-              <h2 class="font-display text-2xl mb-2">Book an Appointment</h2>
-              <p class="text-white/80">Schedule your free consultation</p>
+              <h2 class="font-display text-2xl mb-2">Send a Message</h2>
+              <p class="text-white/80">I'll get back to you within 24 hours</p>
             </div>
 
             <div class="p-8">
-              <!-- Calendly embed placeholder -->
-              <div class="bg-parchment border-2 border-dashed border-forest/20 rounded-xl p-12 text-center min-h-[400px] flex flex-col items-center justify-center">
-                <div class="w-20 h-20 rounded-full bg-forest/10 flex items-center justify-center text-forest mb-6">
-                  <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
+              <form
+                name="contact"
+                method="POST"
+                action="/thank-you"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                class="space-y-6"
+              >
+                <!-- Honeypot field for spam protection -->
+                <p class="hidden">
+                  <label>Don't fill this out: <input name="bot-field" /></label>
+                </p>
+                <input type="hidden" name="form-name" value="contact" />
+
+                <!-- Name and Email row -->
+                <div class="grid sm:grid-cols-2 gap-6">
+                  <div>
+                    <label for="name" class="block text-sm font-medium text-forest mb-2">
+                      Your Name <span class="text-gold">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      autocomplete="name"
+                      class="w-full px-4 py-3 rounded-lg border border-forest/20 bg-cream/50 text-forest placeholder-slate/50 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all"
+                      placeholder="Jane Smith"
+                    />
+                  </div>
+                  <div>
+                    <label for="email" class="block text-sm font-medium text-forest mb-2">
+                      Email Address <span class="text-gold">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      autocomplete="email"
+                      class="w-full px-4 py-3 rounded-lg border border-forest/20 bg-cream/50 text-forest placeholder-slate/50 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all"
+                      placeholder="jane@example.com"
+                    />
+                  </div>
                 </div>
-                <h3 class="font-display text-xl text-forest mb-3">Online Scheduling Coming Soon</h3>
-                <p class="text-slate mb-6 max-w-sm">
-                  The online booking calendar will appear here once connected.
+
+                <!-- Phone and Business Name row -->
+                <div class="grid sm:grid-cols-2 gap-6">
+                  <div>
+                    <label for="phone" class="block text-sm font-medium text-forest mb-2">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      autocomplete="tel"
+                      class="w-full px-4 py-3 rounded-lg border border-forest/20 bg-cream/50 text-forest placeholder-slate/50 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all"
+                      placeholder="(802) 555-1234"
+                    />
+                  </div>
+                  <div>
+                    <label for="business" class="block text-sm font-medium text-forest mb-2">
+                      Business Name
+                    </label>
+                    <input
+                      type="text"
+                      id="business"
+                      name="business"
+                      autocomplete="organization"
+                      class="w-full px-4 py-3 rounded-lg border border-forest/20 bg-cream/50 text-forest placeholder-slate/50 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all"
+                      placeholder="Your Business LLC"
+                    />
+                  </div>
+                </div>
+
+                <!-- Service Interest -->
+                <div>
+                  <label for="service" class="block text-sm font-medium text-forest mb-2">
+                    What are you interested in?
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    class="w-full px-4 py-3 rounded-lg border border-forest/20 bg-cream/50 text-forest focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all appearance-none cursor-pointer"
+                    style="background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%231a3a2a%22 stroke-width=%222%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1rem;"
+                  >
+                    <option value="">Select a service (optional)</option>
+                    <option value="free-consultation">Free 30-Minute Consultation</option>
+                    <option value="trailhead">Trailhead (Basic Bookkeeping)</option>
+                    <option value="ridgeline">Ridgeline (Standard Bookkeeping)</option>
+                    <option value="summit">Summit (Premium Bookkeeping)</option>
+                    <option value="cleanup">Book Cleanup / Catch-Up</option>
+                    <option value="quickbooks-setup">QuickBooks Setup</option>
+                    <option value="other">Other / Not Sure Yet</option>
+                  </select>
+                </div>
+
+                <!-- Message -->
+                <div>
+                  <label for="message" class="block text-sm font-medium text-forest mb-2">
+                    Your Message <span class="text-gold">*</span>
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows="5"
+                    class="w-full px-4 py-3 rounded-lg border border-forest/20 bg-cream/50 text-forest placeholder-slate/50 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all resize-none"
+                    placeholder="Tell me a bit about your business and what you're looking for..."
+                  ></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-2">
+                  <button
+                    type="submit"
+                    class="w-full btn-primary flex items-center justify-center gap-3 py-4 text-lg"
+                  >
+                    <span>Send Message</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Privacy note -->
+                <p class="text-center text-sm text-slate/60">
+                  Your information is kept private and never shared with third parties.
                 </p>
-                <p class="text-slate/60 text-sm max-w-md">
-                  To enable online booking, set up a <a href="https://calendly.com" target="_blank" rel="noopener" class="text-forest underline hover:text-gold transition-colors">Calendly</a> account and add your embed code to this page.
-                </p>
-              </div>
-
-              <!--
-              To add Calendly, replace the placeholder above with:
-
-              <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR-USERNAME/30min" style="min-width:320px;height:630px;"></div>
-              <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-              -->
-
-              <!-- Alternative contact -->
-              <div class="mt-8 pt-8 border-t border-forest/10 text-center">
-                <p class="text-slate mb-4">Or reach out directly via email:</p>
-                <a href="mailto:hello@backcountrybeancounter.com" class="btn-primary inline-flex items-center gap-2">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <span>Send Email</span>
-                </a>
-              </div>
+              </form>
             </div>
           </div>
         </div>

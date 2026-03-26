@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Thank You" description="Thank you for contacting BackCountry Bean Counter. We'll be in touch soon.">
+  <section class="relative min-h-[80vh] flex items-center bg-forest overflow-hidden">
+    <!-- Background layers -->
+    <div class="absolute inset-0 bg-gradient-to-br from-forest-dark via-forest to-evergreen"></div>
+    <div class="absolute inset-0 topo-pattern opacity-20"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 py-20 text-center">
+      <!-- Success icon -->
+      <div class="animate-scale-in inline-flex items-center justify-center w-24 h-24 rounded-full bg-gold/20 text-gold mb-8">
+        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+
+      <h1 class="animate-fade-up delay-100 font-display text-4xl md:text-5xl lg:text-6xl text-white mb-6">
+        Message <span class="text-gold">Received!</span>
+      </h1>
+
+      <p class="animate-fade-up delay-200 text-xl text-white/80 mb-8 max-w-xl mx-auto">
+        Thank you for reaching out. I'll review your message and get back to you within 24 hours.
+      </p>
+
+      <div class="animate-fade-up delay-300 bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-10 max-w-md mx-auto">
+        <div class="flex items-center justify-center gap-3 text-white/70">
+          <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span>Mon–Thurs: 8am–4pm &bull; Friday: 8am–12pm</span>
+        </div>
+      </div>
+
+      <div class="animate-fade-up delay-400 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/" class="btn-primary inline-flex items-center justify-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+          </svg>
+          <span>Back to Home</span>
+        </a>
+        <a href="/services" class="btn-secondary text-white inline-flex items-center justify-center gap-2">
+          <span>View Services</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
