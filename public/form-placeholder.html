@@ -1,0 +1,16 @@
+<!--
+  This hidden file helps Netlify's build-time form detection find the
+  "contact" form. Netlify scans deployed HTML for data-netlify="true"
+  during the post-processing step. The actual form lives in
+  src/pages/contact.astro — this file just ensures detection works.
+-->
+<form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input name="bot-field" />
+  <input name="form-name" value="contact" />
+  <input name="name" />
+  <input name="email" />
+  <input name="phone" />
+  <input name="business" />
+  <input name="service" />
+  <textarea name="message"></textarea>
+</form>
