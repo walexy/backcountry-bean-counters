@@ -43,6 +43,6 @@ public/
 
 ## Configuration Notes
 
-- Email placeholder: `hello@backcountrybeancounter.com` (update when domain is set up)
+- Email: `bfischer@backcountrybeancounter.com`
 - Calendly placeholder in contact page - add embed code when account is created
 - Logo at `public/logo.png` (also in `images/` folder as source)
